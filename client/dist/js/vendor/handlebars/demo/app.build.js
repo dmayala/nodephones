@@ -1,0 +1,1 @@
+({appDir:"./",baseUrl:"./",dir:"../demo-build",optimizeCss:"standard",inlineText:!0,pragmasOnSave:{excludeHbsParser:!0,excludeHbs:!0,excludeAfterBuild:!0},paths:{hbs:"../hbs",Handlebars:"../Handlebars",underscore:"../hbs/underscore",i18nprecompile:"../hbs/i18nprecompile",json2:"../hbs/json2"},locale:"en_ca",hbs:{templateExtension:"hbs",disableI18n:!1},modules:[{name:"main"}]});

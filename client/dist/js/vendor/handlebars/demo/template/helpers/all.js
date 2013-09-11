@@ -1,0 +1,1 @@
+define(["template/helpers/yeller"],function(){return{}});

@@ -1,0 +1,1 @@
+define(["backbone","views/product"],function(e,t){var n=e.View.extend({className:"row",initialize:function(){this.collection.each(this.addOne,this),this.listenTo(this.collection,"add",this.addOne)},addOne:function(e){this.$el.append((new t({model:e})).render().el)}});return n});

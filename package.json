@@ -1,0 +1,24 @@
+{
+  "name": "nodephones",
+  "version": "0.0.0",
+  "description": "",
+  "main": "app.js",
+  "dependencies": {
+	"express": "~3.3.5",
+    "mongoose": "~3.6.19",
+    "hbs": "~2.3.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dmayala/nodephones.git"
+  },
+  "author": "Daniel Ayala",
+  "license": "BSD",
+  "bugs": {
+    "url": "https://github.com/dmayala/nodephones/issues"
+  }
+}
