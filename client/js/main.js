@@ -21,6 +21,6 @@ require.config({
 });
 
 require(['bootstrap', 'backbone', 'routers/appRouter'], function(_bootstrap, Backbone, AppRouter){
-  app = new AppRouter();
+  var app = new AppRouter();
   Backbone.history.start();
 });

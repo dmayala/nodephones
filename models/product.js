@@ -1,26 +1,29 @@
 function productDAO(db) {
   //Schemas
+  var CartedSchema = new db.Schema({
+    "cart_id": db.Schema.ObjectId,
+    "qty": Number
+  });
+
   var ProductSchema = new db.Schema({
-    name: String,
-    description: String,
-    specification: String,
-    photoName: String,
-    price: Number
+    "name": String,
+    "description": String,
+    "specification": String,
+    "photoName": String,
+    "price": Number,
+    "qty": Number,
+    "carted": [CartedSchema]
   });
 
   //Models 
   var ProductModel = db.model('Product', ProductSchema);
 
   this.getProducts = function(callback){
-    ProductModel.find(function(err, products) {
-      callback(err, products);
-    });
+    ProductModel.find(callback);
   },
 
   this.getProduct = function(id, callback) {
-    ProductModel.findById(id, function (err, product) {
-      callback(err, product);
-    });
+    ProductModel.findById(id, callback);
   }
 }
 

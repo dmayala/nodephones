@@ -1,0 +1,24 @@
+<legend>Cart</legend>
+<table class="table">
+<thead>
+  <th>Product</th>
+  <th>Quantity</th>
+  <th>SKU</th>
+  <th>Unit Price</th>
+</thead>
+<tbody>
+  {{#each items}}
+  <tr>
+    <td>{{name}}</td>
+    <td><input type="number" min="1" max="999" step="1" value="{{qty}}"></td>
+    <td>{{sku}}</td>
+    <td>${{dollar price}}</td>
+    <td><a data-index="{{@index}}" class="update" href="#">Update</a></td>
+    <td><a data-index="{{@index}}" class="remove" href="#">Remove</a></td>
+  </tr>
+  {{/each}}
+</tbody>
+</table>
+Total: <span id="total">${{totalPrice items}}</span>
+
+<span id="payup"></span>

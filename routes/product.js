@@ -4,9 +4,9 @@ function ProductHandler(db) {
   var products = new ProductDAO(db);
 
   this.findAll = function(req, res, next){
-    products.getProducts(function (err, products) {
+    products.getProducts(function (err, productslist) {
       if (err) return next(err);
-      res.send(products);
+      res.send(productslist);
     });
   },
 

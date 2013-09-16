@@ -1,8 +1,13 @@
-define(['backbone', 'models/product', 'collections/products','views/productlist','views/prodDetails'], function(Backbone, Product, Products, ProductListView, ProductDetailsView) {
+define([
+  'backbone', 'models/product', 'collections/products','views/productlist',
+  'views/prodDetails','collections/cart', 'views/cartlist'], 
+  function(Backbone, Product, Products, ProductListView, ProductDetailsView, 
+          Cart, CartListView) {
   var AppRouter = Backbone.Router.extend({
     routes: {
         ""                  : "list",
-        "products/:id"      : "prodDetails"
+        "products/:id"      : "prodDetails",
+        "cart/"              : "showCart"
     },
 
     list: function() {
@@ -16,6 +21,13 @@ define(['backbone', 'models/product', 'collections/products','views/productlist'
       var product = new Product({_id: id});
       product.fetch({success: function() {
         $('#content').html(new ProductDetailsView({model: product}).render().el);
+      }});
+    },
+
+    showCart: function() {
+      var collection = new Cart();
+      collection.fetch({success: function() {
+        $('#content').html(new CartListView({collection: collection}).el);
       }});
     }
   });
