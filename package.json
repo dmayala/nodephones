@@ -5,7 +5,8 @@
   "main": "app.js",
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "./node_modules/bower/bin/bower install && ./node_modules/requirejs/bin/r.js -o client/build/app.build.js"
   },
   "repository": {
     "type": "git",
@@ -26,6 +27,7 @@
     "hbs": "~2.3.1",
     "mongoose": "~3.6.19",
     "requirejs": "~2.1.8",
-    "express": "~3.4.0"
+    "express": "~3.4.0",
+    "bower": "~1.2.6"
   }
 }

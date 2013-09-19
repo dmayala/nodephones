@@ -1,0 +1,27 @@
+{
+  "name": "Nodephones",
+  "version": "0.0.0",
+  "homepage": "https://github.com/dmayala/nodephones",
+  "authors": [
+    "Daniel Ayala <dmayala@csupomona.edu>"
+  ],
+  "description": "A sample MEAN stack application.",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "private": true,
+  "dependencies": {
+    "jquery": "~2.0.3",
+    "bootstrap": "~3.0.0",
+    "requirejs": "~2.1.8",
+    "require-handlebars-plugin": "a9819e78f54dd5655b18dea976a2507baf660e1c",
+    "backbone": "~1.0.0",
+    "underscore-amd": "~1.5.1",
+    "backbone.paginator": "~0.8.1"
+  }
+}

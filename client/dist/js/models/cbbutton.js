@@ -1,1 +1,0 @@
-define(["backbone"],function(e){var t=e.Model.extend({idAttribute:"_id",urlRoot:"/coins"});return t});

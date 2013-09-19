@@ -18,8 +18,8 @@ function productDAO(db) {
   //Models 
   var ProductModel = db.model('Product', ProductSchema);
 
-  this.getProducts = function(callback){
-    ProductModel.find(callback);
+  this.getProducts = function(skip, limit, callback){
+    ProductModel.find().skip(skip).limit(limit).exec(callback);
   },
 
   this.getProduct = function(id, callback) {

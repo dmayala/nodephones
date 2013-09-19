@@ -4,5 +4,5 @@
   dir: "../dist",
   mainConfigFile: "../js/main.js",
   name: "main",
-  optimizeCss: "standard"
+  optimizeCss: "standard",
 })

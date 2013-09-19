@@ -3,11 +3,10 @@ define(['backbone', 'views/product'], function(Backbone, ProductView) {
 
     className: "row",
 
-    //listen to models
-    initialize: function() {
+    render: function() {
       this.collection.each(this.addOne, this);
-      this.listenTo(this.collection, "add", this.addOne);
-    },    
+      return this;
+    },   
 
     addOne: function(model) {
       this.$el.append(new ProductView({model: model}).render().el);

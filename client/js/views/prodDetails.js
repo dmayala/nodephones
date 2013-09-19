@@ -1,4 +1,4 @@
-define(['backbone', 'models/cartItem', 'collections/cart', 'hbs!templates/prodDetailsTpl'], function(Backbone, CartItem, Cart, ProdDetailsTpl) {
+define(['backbone', 'models/cartitem', 'collections/cart', 'hbs!templates/prodDetailsTpl'], function(Backbone, CartItem, Cart, ProdDetailsTpl) {
   var ProductDetailsView = Backbone.View.extend({
 
     //template

@@ -1,1 +1,0 @@
-define(["hbs!template/one"],function(e){var t=document.getElementById("demo-app-container");t.innerHTML=e({adjective:"favorite",listofstuff:["bananas","democracy","expired milk"]})});

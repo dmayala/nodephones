@@ -5,6 +5,12 @@
 # npm packages
 node_modules
 
+# bower packages
+client/js/vendor/
+
+#dist
+client/dist/
+
 # Mac
 .DS_Store
 

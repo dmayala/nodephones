@@ -1,0 +1,27 @@
+{{#pagination currentPage pageCount size}}
+<ul class="pagination">
+  {{#unless startFromFirstPage}}
+  <li>
+    <a href="#">&lt;</a>
+  </li>
+  {{/unless}}
+ 
+  {{#each pages}}
+    {{#if isCurrent}}
+    <li class="active">
+      <span>{{page}}</span>
+    </li>
+    {{/if}}
+    {{#unless isCurrent}}
+    <li>
+      <a class="page" href="#page/{{page}}">{{page}}</a>
+    </li>
+    {{/unless}}
+  {{/each}}
+ 
+  {{#unless endAtLastPage}}
+  <li>
+    <a href="#">&gt;</a>
+  </li>
+  {{/unless}}
+{{/pagination}}

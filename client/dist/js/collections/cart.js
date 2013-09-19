@@ -1,1 +1,0 @@
-define(["backbone","models/cartitem"],function(e,t){var n=e.Collection.extend({model:t,url:"/cart"});return n});

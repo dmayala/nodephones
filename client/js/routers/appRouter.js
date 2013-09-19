@@ -1,19 +1,24 @@
 define([
   'backbone', 'models/product', 'collections/products','views/productlist',
-  'views/prodDetails','collections/cart', 'views/cartlist'], 
+  'views/prodDetails','collections/cart', 'views/cartlist', 'views/paginated'], 
   function(Backbone, Product, Products, ProductListView, ProductDetailsView, 
-          Cart, CartListView) {
+          Cart, CartListView, PaginatedView) {
   var AppRouter = Backbone.Router.extend({
     routes: {
         ""                  : "list",
+        "page/:page"        : "list",
         "products/:id"      : "prodDetails",
-        "cart/"              : "showCart"
+        "cart/"             : "showCart",
     },
 
-    list: function() {
-      var collection = new Products();
-      collection.fetch({success: function() {
-        $('#content').html(new ProductListView({collection: collection}).el);
+    list: function(page) {
+      collection = new Products();
+
+      var page = page || 1;
+      
+      collection.goTo(page, {success: function() {
+        $('#content').html(new ProductListView({collection: collection}).render().el);
+        $('#content').append(new PaginatedView({collection: collection}).render().el);
       }});
     },
 

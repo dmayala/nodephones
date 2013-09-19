@@ -1,22 +1,18 @@
 @charset 'UTF-8';
 
 a.plain:link {
-    color: #333;
     text-decoration: none;
 }
 
 a.plain:active {
-    color: #333;
     text-decoration: none;
 }
 
 a.plain:visited {
-    color: #333;
     text-decoration: none;
 }
 
 a.plain:hover {
-    color: #333;
     text-decoration: none;
 }
 
@@ -31,11 +27,15 @@ a.plain:hover {
 
 .myThumbs {
     max-width: 65%;
-    max-height: 65%;
+    max-height: 60%;
 }
 
 .form-control {
   width: 60%;
 }
 
+.pagination {
+  display: table;
+  margin: 0 auto;    
+}
 
