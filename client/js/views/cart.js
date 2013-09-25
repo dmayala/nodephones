@@ -19,7 +19,7 @@ define(['backbone', 'hbs!templates/cartTpl', 'models/cbbutton', 'views/cbbutton'
       var index = $(e.currentTarget).attr("data-index");
       this.model.get('items').splice(index, 1);
       this.model.save();
-      this.model.trigger("change");
+      this.model.trigger('change');
     },
 
     updateUnit: function(e) {

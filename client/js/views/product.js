@@ -7,8 +7,8 @@ define(['backbone', 'hbs!templates/prodTpl'], function(Backbone, ProdTpl) {
 
     //listen to models
     initialize: function() {
+      this.listenTo(this.model, "remove", this.remove);
       this.listenTo(this.model, "change", this.render);
-      this.listenTo(this.model, "destroy", this.remove);
     },
 
     render: function() {

@@ -34,7 +34,14 @@ require.config({
   }
 });
 
-require(['bootstrap', 'backbone', 'routers/appRouter'], function(_bootstrap, Backbone, AppRouter){
+require(['bootstrap', 'backbone', 'routers/appRouter', 'mediator/controller'], function(_bootstrap, Backbone, AppRouter, Controller){
+  Backbone.View.prototype.close = function(){
+    this.remove();
+    this.unbind();
+  }
+  var controller = new Controller();
   var app = new AppRouter();
+  app.controller = controller;
+  controller.start();
   Backbone.history.start();
 });

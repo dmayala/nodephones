@@ -17,6 +17,7 @@ define(['backbone', 'models/cartitem', 'collections/cart', 'hbs!templates/prodDe
       var modelAtr = this.model.attributes;
       var cartItem = new CartItem({items: [{name: modelAtr.name, qty: $("select").val(), sku: modelAtr._id, price: modelAtr.price}]});
       cartItem.save();
+      $("#cart").text(parseInt($("#cart").text()) + parseInt($("select").val()));
     },
 
     render: function() {

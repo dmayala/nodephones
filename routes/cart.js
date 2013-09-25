@@ -18,8 +18,19 @@ function CartHandler(db) {
     }
   },
 
+  this.findCartItems = function(req, res, next) {
+    var id = req.session.cart;
+
+    cart.getItems(id, function(err, cart) {
+      if (err) return next(err);
+      req.session.cartItems = cart.items;
+      next();
+    });
+  },
+
   this.coins = function(req, res, next) {
     var id = req.session.cart;
+    var orderNo = req.session.order;
 
     cart.getItems(id, function(err, cart) {
       var total = 0;
@@ -30,11 +41,11 @@ function CartHandler(db) {
 
       var param = {
             "button": {
-              "name": 'Order #123',
+              "name": 'Order ' + orderNo,
               "price_string": "$" + total.toString(),
               "price_currency_iso": 'USD',
-              "custom": 'Order123',
-              "description": 'Test',
+              "custom": orderNo,
+              "description": 'Your Nodephones Order',
               "type": 'buy_now',
               "style": 'custom_large'
             }
