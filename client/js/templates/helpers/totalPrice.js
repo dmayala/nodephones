@@ -1,4 +1,4 @@
-define('templates/helpers/totalPrice', ['Handlebars'], function ( Handlebars ) {
+define('templates/helpers/totalPrice', ['hbs/handlebars'], function ( Handlebars ) {
   function totalPrice ( context, options ) {
     var sum = 0;
     var i = context.length;

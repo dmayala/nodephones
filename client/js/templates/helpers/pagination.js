@@ -1,4 +1,4 @@
-define('templates/helpers/pagination', ['Handlebars'], function ( Handlebars ) {
+define('templates/helpers/pagination', ['hbs/handlebars'], function ( Handlebars ) {
   function pagination(currentPage, totalPage, size, options) {
     var startPage, endPage, context;
    

@@ -1,4 +1,4 @@
-<a class="coinbase-button" data-code="{{ code }}" data-button-style="custom_large"></a>
+<a class="coinbase-button" data-code="{{ code }}" href="https://www.coinbase.com/checkouts/{{ code }}" data-button-style="custom_large"></a>
 <script type="text/javascript">
   $(document).ready(function() {
     $(".my-custom-link").hide(); 
@@ -8,10 +8,6 @@
         $(".my-custom-link").click(function(){
           $(document).trigger("coinbase_show_modal", "{{ code }}");
           return false;});
-        /*$(document).on("coinbase_payment_complete", function(event, code){
-          console.log("Payment completed for button "+ code);
-          window.location = "/confirmation.html";
-        });*/
       }); 
     });
   });

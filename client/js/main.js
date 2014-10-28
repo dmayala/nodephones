@@ -1,20 +1,19 @@
 require.config({
   paths: {
-    hbs: "vendor/require-handlebars-plugin/hbs",
-    Handlebars: "vendor/require-handlebars-plugin/Handlebars",
+    hbs: 'vendor/require-handlebars-plugin/hbs',
     jquery: 'vendor/jquery/jquery.min',
     bootstrap: 'vendor/bootstrap/dist/js/bootstrap',
     underscore: 'vendor/underscore-amd/underscore',
-    i18nprecompile: "vendor/require-handlebars-plugin/hbs/i18nprecompile",
-    json2: "vendor/require-handlebars-plugin/hbs/json2",
+    i18nprecompile: 'vendor/require-handlebars-plugin/hbs/i18nprecompile',
+    json2: 'vendor/require-handlebars-plugin/hbs/json2',
     backbone: 'vendor/backbone/backbone',
     paginator: 'vendor/backbone.paginator/dist/backbone.paginator'
   },
 
   shim: {
     backbone: {
-        deps: ["underscore", "jquery"],
-        exports: "Backbone"
+        deps: ['underscore', 'jquery'],
+        exports: 'Backbone'
     },
     bootstrap: ['jquery'],
     paginator: {
@@ -24,13 +23,13 @@ require.config({
         'jquery'
         ],
         exports: 'Backbone.Paginator'
+    },
+    hbs : {
+      disableI18n: true,
+      helperPathCallback: function (name) {
+        return 'templates/helpers/' + name;
+      }
     }
-  },
-
-  hbs: {
-    disableI18n: true,
-    templateExtension: "html",
-    helperDirectory: "templates/helpers/"
   }
 });
 

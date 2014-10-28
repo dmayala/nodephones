@@ -1,4 +1,4 @@
-define('templates/helpers/dollar', ['Handlebars'], function ( Handlebars ) {
+define('templates/helpers/dollar', ['hbs/handlebars'], function ( Handlebars ) {
   function dollar (cents) {
     var dollarNum = (cents/100).toFixed(2);
     return dollarNum;

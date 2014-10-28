@@ -1,8 +1,7 @@
 var CartDAO = require('../models/cart').cartDAO;
-var Coinbase = require('coinbase');
-var coinbase = new Coinbase({
-  APIKey: process.env.COINBASE_APIKEY
-});
+var coinbase = require('coinbase-auth');
+coinbase.key(process.env.COINBASE_API_KEY);
+coinbase.secret(process.env.COINBASE_API_SECRET);
 
 function CartHandler(db) {
   var cart = new CartDAO(db);
@@ -39,21 +38,24 @@ function CartHandler(db) {
         total += ((item.price * item.qty)/100);
       });
 
-      var param = {
-            "button": {
-              "name": 'Order ' + orderNo,
-              "price_string": "$" + total.toString(),
-              "price_currency_iso": 'USD',
-              "custom": orderNo,
-              "description": 'Your Nodephones Order',
-              "type": 'buy_now',
-              "style": 'custom_large'
-            }
-          };
+      var options = {
+        "url": "https://api.coinbase.com/v1/buttons",
+        "json": {
+          "button": {
+            "name": 'Order ' + orderNo,
+            "price_string": "$" + total.toString(),
+            "price_currency_iso": 'USD',
+            "custom": orderNo,
+            "description": 'Your Nodephones Order',
+            "type": 'buy_now',
+            "style": 'custom_large'
+          }
+        }
+      };
 
-      coinbase.buttons.create(param, function (err, data) {
+      coinbase.post(options, function (err, data) {
         if (err) {
-          res.send(500);
+          next(err);
         } else {
           res.send(data.button);
         }
